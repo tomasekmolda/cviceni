@@ -1,0 +1,123 @@
+/* Základní styl pro stránku */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('https://stickybranding.com/wp-content/uploads/2019/01/SBQ-Hard-Work.jpg'); /* URL obrázku */
+    background-size: cover; /* Obrázek se roztáhne tak, aby pokryl celé pozadí */
+    background-position: center; /* Umístění na střed */
+    background-attachment: fixed; /* Obrázek zůstane pevný při scrollování */
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styl pro nadpis */
+h1 {
+    color: #ffffff; /* Bílá barva pro vysoký kontrast */
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-top: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Přidá tmavý stín pro lepší čitelnost */
+    font-family: 'Arial', sans-serif; /* Změna stylu písma pro lepší čitelnost */
+}
+
+/* Ikona vedle nadpisu */
+h1::after {
+    content: "💊";
+    margin-left: 10px;
+    font-size: 1.2em;
+    vertical-align: middle;
+}
+
+/* Kontejner pro doplňky a kalendář vedle sebe */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+/* Kontejner pro doplňky */
+#supplements {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Styl pro každou "kartu" doplňku */
+.supplement {
+    background-color: #ffffff;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 12px;
+    width: 220px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.supplement:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Třída pro zaškrtnuté doplňky */
+.checked {
+    background-color: #d4edda; /* Světle zelená */
+    border: 1px solid #28a745; /* Zelený okraj */
+    color: #28a745; /* Zelená barva textu */
+}
+
+/* Styl pro text uvnitř karty */
+.supplement label {
+    font-size: 1.2em;
+    color: inherit;
+}
+
+/* Skrytí skutečného checkboxu */
+.supplement input[type="checkbox"] {
+    display: none;
+}
+
+/* Styl pro kalendář */
+#calendar {
+    width: 220px; /* Stejná šířka jako karty */
+    text-align: center;
+    padding: 15px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+#calendar h3 {
+    font-size: 1.5em;
+    color: #4a90e2; /* Barva textu nadpisu kalendáře */
+    margin-bottom: 10px;
+}
+
+.day {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 2px;
+    line-height: 30px;
+    border-radius: 50%;
+    font-size: 1em;
+    color: #333; /* Černá barva textu */
+    background-color: #f0f0f0;
+}
+
+.day.completed {
+    background-color: #28a745;
+    color: #fff;
+}
+
+/* Responsivní styl pro mobilní zařízení */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
